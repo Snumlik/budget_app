@@ -44,7 +44,7 @@
                     <table>
                         <tr>
                             <th>Month</th>
-                            <th>Total Payments</th>
+                            <th>Start</th>
                             <th>Payment</th>
                             <th>Interest</th>
                             <th>Principle</th>
@@ -73,21 +73,17 @@
                                 if (count($trackerData) == 0) {
                                     echo 
                                     "<label>
-                                        Deposit Date<span> *</span>
+                                        Payment Date<span> *</span>
                                         <input type='date' name='saveDate' required>
                                     </label>
                                     <label>
-                                        Starting Value<span> *</span>
-                                        <input type='number' name='start' placeholder='$1000' required>
-                                    </label>
-                                    <label>
-                                        Deposit Amount<span> *</span>
-                                        <input type='number' name='deposit' placeholder='$100' required>
+                                        Payment Amount<span> *</span>
+                                        <input type='number' name='curPayment' placeholder='$100' required>
                                     </label>
                                     <div class='login_button'>
                                         <input type='submit' name='submit' value='Add New Entry'>
                                         <!-- Add the action key and value pair -->
-                                        <input type='hidden' name='action' value='SaveNewEntry'>
+                                        <input type='hidden' name='action' value='DebtNewEntry'>
                                         <input type='hidden' name='trackerId' value='";
                                             if (isset($tracker['trackerId'])) {echo $tracker['trackerId'];}
                                             elseif (isset($trackerId)) {echo $trackerId;}
@@ -96,17 +92,17 @@
                                 } elseif (count($trackerData) > 0) {
                                     echo
                                     "<label>
-                                        Deposit Date<span> *</span>
+                                        Payment Date<span> *</span>
                                         <input type='date' name='saveDate' required>
                                     </label>
                                     <label>
-                                        Deposit Amount<span> *</span>
-                                        <input type='number' name='deposit' placeholder='$100' required>
+                                        Payment Amount<span> *</span>
+                                        <input type='number' name='curPayment' placeholder='$100' required>
                                     </label>
                                     <div class='login_button'>
                                         <input type='submit' name='submit' value='Add New Entry'>
                                         <!-- Add the action key and value pair -->
-                                        <input type='hidden' name='action' value='SaveEntry'>
+                                        <input type='hidden' name='action' value='DebtEntry'>
                                         <input type='hidden' name='trackerId' value='";
                                             if (isset($tracker['trackerId'])) {echo $tracker['trackerId'];}
                                             elseif (isset($trackerId)) {echo $trackerId;}
